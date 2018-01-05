@@ -15,7 +15,24 @@ class CreateTableVisitantes extends Migration
     {
         Schema::create('visitantes', function (Blueprint $table) {
             $table->increments('id');
+            //
+            $table->string('nome')->comment('Nome completo do Visitante');
+            $table->string('email')->comment('Email valido do Visitante');
+            $table->string('celular')->comment('Tel. Celular do Visitante');
+            //
+            $table->date('data_nascimento')->comment('Data de Nascimento do Visitante');
+            //
+            $table->string('cep')->comment('CEP valido do endereço do Visitante');
+            //
+            $table->string('endereco')->comment('Endereço completo com numero');
+            $table->string('bairro')->comment('Bairro onde se encontra a endereço');
+            $table->string('cidade')->comment('Cidade onde se encontra a endereço');
+            $table->string('uf')->comment('Sigla do Estado onde se encontra a endereço');
+            //
             $table->timestamps();
+            //
+            $table->charset = 'utf8';
+            //
         });
     }
 
