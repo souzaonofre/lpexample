@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+    //return view('welcome');
+//});
+
+
+Route::get('/', 'LandPageController@index');
+
+
+Route::get('/visitantes', 'VisitantesController@index');
+
+Route::post('/visitantes', 'VisitantesController@store');
