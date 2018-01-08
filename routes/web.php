@@ -15,10 +15,12 @@
     //return view('welcome');
 //});
 
+Route::group(['middleware' => 'web'], function() {
+    Route::get('/', 'LandPageController@index');
 
-Route::get('/', 'LandPageController@index');
 
+    Route::get('/visitantes', 'VisitantesController@index');
 
-Route::get('/visitantes', 'VisitantesController@index');
+    Route::post('/visitantes', 'VisitantesController@store');
+});
 
-Route::post('/visitantes', 'VisitantesController@store');

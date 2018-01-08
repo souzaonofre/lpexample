@@ -1,8 +1,19 @@
 <!-- LandPage form -->
-<form>
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form id="form-visitante" @submit.prevent="createPost" method="POST">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-        <div class="panel panel-default">
+        <div class="panel panel-default bg-gray-ligth">
 
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
@@ -20,7 +31,7 @@
 
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default bg-gray-ligth">
 
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">

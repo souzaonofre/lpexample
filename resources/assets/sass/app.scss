@@ -6,7 +6,7 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 
 html, body {
@@ -60,6 +60,32 @@ html, body {
     margin-bottom: 30px;
 }
 
+.landpage {
+    width: 100% !important;
+    height: auto !important;
+    z-index: 5;
+}
+
+.bg-landpage {
+    background-color: transparent;
+    background-image: url("/img/bg-landpage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: 100%;
+}
+
+.bg-gray-ligth {
+    background-color: #E3E3F7;
+}
+
+label {
+    font-size: large !important;
+}
+
+
 .landpage-container {
     width: 100% !important;
     panding: 20% !important;
@@ -79,3 +105,8 @@ html, body {
     line-height: 1.6;
 }
 
+.title-campaign,
+.text-campaign {
+    color: #EEE !important;
+    font-weight: 700;
+}

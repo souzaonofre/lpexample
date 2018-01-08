@@ -1,7 +1,7 @@
 
   <div class="form-row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="form-group  has-error">
+        <div class="form-group">
             <label for="endereco" class="control-label">Endereço</label>
             <input type="text"
                 name="endereco"
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="form-group  has-error">
+        <div class="form-group">
             <label for="bairro" class="control-label">Bairro</label>
             <input type="text"
                 id="bairro"
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="form-group  has-error">
+        <div class="form-group">
             <label for="cidade" class="control-label">Cidade</label>
             <input type="text"
                 id="cidade"
@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="form-group  has-error">
+        <div class="form-group">
             <label for="data_nascimento" class="control-label">UF</label>
             <input type="text"
                 id="uf"
@@ -50,7 +50,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <button type="submit" class="btn btn-block btn-lg btn-primary">Cadastrar</button>
+      <button type="submit" class="btn btn-block btn-lg btn-primary">Enviar Dados</button>
     </div>
 
   </div>

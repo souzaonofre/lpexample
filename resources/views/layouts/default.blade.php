@@ -6,12 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="The minimal stack to develop Landing Pages">
         <meta name="author" content="Onofre Souza <souzaonofre@gmail.com>">
+        <meta id="token" name="token" value="{{ csrf_token() }}">
 
 
         <title>{{ config('app.name') }}</title>
 
 
         <!-- Webpack Styles -->
+        <link href="{{ asset('css/vendor.css')}}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Page Styles -->
@@ -19,7 +21,7 @@
 
     </head>
 
-    <body>
+    <body id="app" class="bg-landpage">
 
         <!-- Navigation -->
         <nav class="navbar navbar-light navbar-right">
@@ -66,6 +68,8 @@
 
 
         <!-- Webpack Scripts -->
+        <script src="{{ asset('js/manifest.js')}}"></script>
+        <script src="{{ asset('js/vendor.js')}}"></script>
         <script src="{{ asset('js/app.js')}}"></script>
 
         <!-- Page Scripts -->

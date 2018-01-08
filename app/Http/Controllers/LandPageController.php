@@ -9,7 +9,7 @@ class LandPageController extends Controller
     //
     public function index()
     {
-        return view('landpage.index', []);
+        return view('landpage.index');
     }
     //
 

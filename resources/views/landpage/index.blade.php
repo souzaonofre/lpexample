@@ -25,3 +25,9 @@
 </section>
 <!-- end LandPage content -->
 @endsection
+
+@section('script')
+<script>
+    window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};
+</script>
+@endsection
