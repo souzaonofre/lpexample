@@ -8408,3 +8408,21 @@ body {
   margin-bottom: 30px;
 }
 
+.landpage-container {
+  width: 100% !important;
+  panding: 20% !important;
+}
+
+.title-campaign {
+  width: 100% !important;
+  panding: 10% !important;
+}
+
+.text-campaign {
+  width: 100% !important;
+  panding: 10% !important;
+  margin-top: 5% !important;
+  font-size: 22px;
+  line-height: 1.6;
+}
+

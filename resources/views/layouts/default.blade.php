@@ -22,12 +22,41 @@
     <body>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-light bg-light static-top">
-          <div class="container">
-            <a class="navbar-brand" href="#">LandPage Example</a>
-            <a class="navbar-brand" href="#">About us</a>
-            <a class="navbar-brand" href="#">Admin</a>
-          </div>
+        <nav class="navbar navbar-light navbar-right">
+            <div class="container float-right">
+
+                <div class="navbar-header">
+                  <button type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target="#navbar-collapse-1"
+                    aria-expanded="false">
+
+                    <span class="sr-only">:::</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a  href="#"
+                                class="navbar-brand dropdown-toggle"
+                                data-toggle="dropdown"
+                                role="button"
+                                aria-haspopup="true"
+                                aria-expanded="false">LandPage</a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="navbar-brand" href="#">"Quem somos"</a></li>
+                                <li><a class="navbar-brand small" href="#">...</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
 
