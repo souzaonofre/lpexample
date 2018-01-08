@@ -1,24 +1,43 @@
 <!-- LandPage form -->
 <form>
-  <div class="form-row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <input type="text" name="nome" class="form-control form-control-sm" placeholder="Seu Nome Completo...">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Cadastre aqui seus dados:
+                    </a>
+                </h4>
+            </div>
+
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    @include('landpage.form-dados')
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Dados do seu Endereço:
+                </a>
+              </h4>
+            </div>
+
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    @include('landpage.form-end')
+                </div>
+            </div>
+
+        </div>
+
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <input type="email" name="email"  class="form-control form-control-sm" placeholder="Seu email...">
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <input type="text" name="celular" class="form-control form-control-sm" placeholder="Numero seu Celular...">
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <input type="text" name="data_nascimento" class="form-control form-control-sm" placeholder="Sua Data Nascimento...">
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <input type="text" name="cep" class="form-control form-control-sm" placeholder="Seu CEP...">
-    </div>
-    <div class="col-12 col-md-3">
-      <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-    </div>
-  </div>
 </form>
 <!-- end LandPage form -->
