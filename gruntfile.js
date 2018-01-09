@@ -6,48 +6,61 @@ module.exports = function (grunt) {
       assets: ['dist/*.js', 'dist/js/*.js', 'dist/css/*.css']
     },
 
-    out: {
+    src: {
+
+        app: {
+          js: ['resources/assets/js/app.js'],
+          css: ['resources/assets/css/*.css'],
+          img: ['resources/assets/img']
+        },
+
+        vendor: {
+              js: [
+                'node_modules/jquery/dist/jquery.js',
+                'node_modules/bootstrap/dist/js/bootstrap.js',
+                'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
+                'node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js',
+                'node_modules/inputmask/dist/jquery.inputmask.bundle.js'
+
+              ],
+              css: [
+                'node_modules/font-awesome/css/font-awesome.css',
+                'node_modules/bootstrap/dist/css/bootstrap.css',
+                'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css',
+
+              ]
+        },
+
+        fonts: [
+          'node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2,otf}',
+          'node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2,otf}'
+        ],
+
+        sass: {
+            app: 'resources/assets/sass/app.sass'
+        }
+
+    },
+
+    dest: {
+
       app: {
         js: 'public/js/app.js',
         css: 'public/css/app.css',
       },
+
       vendor: {
         js: 'public/js/vendor.js',
         css: 'public/css/vendor.css',
       },
+
       fonts: 'public/fonts',
-      img: 'public/img'
-    },
+      img: 'public/img',
 
-    app: {
-      js: ['resources/assets/js/app.js'],
-      css: ['resources/assets/css/*.css'],
-      img: ['resources/assets/img']
-    },
+      sass: {
+          app: 'resources/assets/css/app.css'
+      }
 
-    vendor: {
-
-      js: [
-        'node_modules/jquery/dist/jquery.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
-        'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
-
-      ],
-      css: [
-        'node_modules/font-awesome/css/font-awesome.css',
-        'node_modules/bootstrap/dist/css/bootstrap.css',
-        'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css',
-      ]
-    },
-
-    fonts: [
-      'node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2,otf}',
-      'node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2,otf}'
-    ],
-
-    sass: {
-        src: 'resources/assets/sass/*.sass',
-        dest: 'resources/assets/css/app.css'
     }
 
   };
@@ -63,8 +76,8 @@ module.exports = function (grunt) {
       },
       scripts: {
         files: [{
-          src: $location.app.js,
-          dest: $location.out.app.js,
+          src: $location.src.app.js,
+          dest: $location.dest.app.js,
         }],
       },
     },
@@ -82,7 +95,7 @@ module.exports = function (grunt) {
         },
       },
       gruntfile: ['gruntfile.js'],
-      src: $location.app.js
+      src: $location.src.app.js
     },
     //
     //cacheBust: {
@@ -102,8 +115,8 @@ module.exports = function (grunt) {
       },
       css: {
         files: [{
-          src: $location.app.css,
-          dest: $location.out.app.css,
+          src: $location.src.app.css,
+          dest: $location.dest.app.css,
         }]
       }
     },
@@ -114,8 +127,8 @@ module.exports = function (grunt) {
           // Assets Fonts files
           {
             expand: true,
-            src: $location.fonts,
-            dest: $location.out.fonts,
+            src: $location.src.fonts,
+            dest: $location.dest.fonts,
             flatten: true
           }
           // Assets Image files
@@ -138,13 +151,13 @@ module.exports = function (grunt) {
         files: [
           // Vendor JS
           {
-            src: $location.vendor.js,
-            dest: $location.out.vendor.js
+            src: $location.src.vendor.js,
+            dest: $location.dest.vendor.js
           },
           // Vendor CSS
           {
-            src: $location.vendor.css,
-            dest: $location.out.vendor.css
+            src: $location.src.vendor.css,
+            dest: $location.dest.vendor.css
           }
         ]
       },
@@ -158,23 +171,23 @@ module.exports = function (grunt) {
         files: [
           // Vendor JS
           {
-            src: $location.vendor.js,
-            dest: $location.out.vendor.js
+            src: $location.src.vendor.js,
+            dest: $location.dest.vendor.js
           },
           // App JS
           {
-            src: $location.app.js,
-            dest: $location.out.app.js
+            src: $location.src.app.js,
+            dest: $location.dest.app.js
           },
           // Vendor CSS
           {
-            src: $location.vendor.css,
-            dest: $location.out.vendor.css
+            src: $location.src.vendor.css,
+            dest: $location.dest.vendor.css
           },
           // App CSS
           {
-            src: $location.app.css,
-            dest: $location.out.app.css
+            src: $location.src.app.css,
+            dest: $location.dest.app.css
           }
         ]
       }
@@ -204,14 +217,14 @@ module.exports = function (grunt) {
     //
     watch: {
       scripts: {
-        files: [$location.app.js, $location.app.css],
+        files: [$location.src.app.js],
         tasks: ['uglify'],
         options: {
           spawn: false,
         }
       },
       css: {
-        files: $location.app.css,
+        files: $location.src.app.css,
         tasks: ['cssmin'],
         options: {
           spawn: false,
@@ -219,13 +232,13 @@ module.exports = function (grunt) {
       },
       //
       dev: {
-        files: [$location.app.js, $location.app.css],
+        files: [$location.src.app.js, $location.src.app.css],
         tasks: ['dev'],
         options: {
           spawn: false,
         }
       }
-    },
+    }
     //
   });
 

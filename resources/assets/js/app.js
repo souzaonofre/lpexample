@@ -25,3 +25,53 @@
 //});
 
 //var Inputmask = require('inputmask');
+
+$(document).ready(function(){
+    //
+    var fNome = $("#nome");
+    var fDataNasc = $("#data-nascimento");
+    var fCelular = $("#celular");
+    var fCep = $("#cep");
+    //
+    //
+    // Field Nome
+    //
+    // Focus function
+    fNome.focus();
+    fNome.on('blur'){
+    };
+
+    //
+    // Field Data Nascimento
+    //
+    // Datepicker function
+    fDataNasc.datepicker({
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        startView: 2,
+        autoclose: true
+    });
+    //
+    // Field Celular functions
+    //
+    // Mask function
+    fCelular.inputmask({
+        "greedy": false,
+        "clearMaskOnLostFocus": true,
+        "clearIncomplete": true,
+        "autoUnmask": true,
+        "mask": "(99) 99999-9999"
+    });
+    //
+    // Field CEP
+    //
+    // Mask function
+    fCep.inputmask({
+        "greedy": false,
+        "clearMaskOnLostFocus": true,
+        "clearIncomplete": true,
+        "autoUnmask": true,
+        "mask": "99999-999"
+    });
+    //
+});

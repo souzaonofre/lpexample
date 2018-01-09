@@ -10,7 +10,10 @@
     </div>
 @endif
 
-<form id="form-visitante" @submit.prevent="createPost" method="POST">
+<form id="form-visitante" action="{{url('/visitantes')}}" method="POST">
+
+    {{ csrf_field() }}
+
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default bg-gray-ligth">

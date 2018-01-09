@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 class LandPageController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        return view('landpage.index');
+        if ($request->session()->has('visitante')) {
+            $visitante = $request->session()->pull('visitante');
+        } else {
+            $visitante = null;
+        }
+        //
+        return view('landpage.index', ['visitante' => $visitante]);
     }
     //
 

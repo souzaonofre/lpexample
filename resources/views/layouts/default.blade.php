@@ -61,6 +61,17 @@
             </div>
         </nav>
 
+        @if(Session::has('success') || Session::has('fail'))
+        <div class="container">
+            @if(Session::has('success'))
+            <div class="alert alert-success"><em> {!! session('success') !!}</em></div>
+            @endif
+
+            @if(Session::has('fail'))
+            <div class="alert alert-danger"><em> {!! session('fail') !!}</em></div>
+            @endif
+        </div>
+        @endif
 
         <div id="main-content">
              @yield('content')
@@ -68,7 +79,6 @@
 
 
         <!-- Webpack Scripts -->
-        <script src="{{ asset('js/manifest.js')}}"></script>
         <script src="{{ asset('js/vendor.js')}}"></script>
         <script src="{{ asset('js/app.js')}}"></script>
 
