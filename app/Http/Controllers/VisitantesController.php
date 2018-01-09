@@ -34,7 +34,7 @@ class VisitantesController extends Controller
             $request->session()->forget('visitante');
             $request->session()->flush();
             //
-            $visitante = Visitante::create($request->visitante);
+            $visitante = Visitante::create($request->all());
             //
             if ($visitante) {
                 return redirect('/')->with('success', 'Dados enviados com sucesso!');
@@ -76,8 +76,8 @@ class VisitantesController extends Controller
         ];
         //
         $rules = [
-            'nome' => 'required|unique:visitantes.nome|min:5|max:200',
-            'email' => 'required|email|unique:visitantes.email',
+            'nome' => 'required|unique:visitantes|min:5|max:200',
+            'email' => 'required|email|unique:visitantes',
             'celular' => 'required|alpha_num|min:9|max:18',
             'data_nascimento' => 'required|date',
             'cep' => 'required|min:8|max:11',

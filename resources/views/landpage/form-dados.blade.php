@@ -10,9 +10,12 @@
                 class="form-control"
                 placeholder="Nome Completo..."
                 title="Digite aqui seu nome completo!"
-                autofocus
-                required>
-        </div>
+                autofocus>
+
+            @if ($errors->any() && $errors->has('nome'))
+            <p id="nome-error" class="text-center text-danger"><strong>{{ $errors->first('nome') }}</strong></p>
+            @endif
+        </diV>
 
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -24,8 +27,11 @@
                 value="{{$visitante ? $visitante->email : ''}}"
                 class="form-control"
                 placeholder="Email..."
-                title="Digite aqui um Email válido!"
-                required>
+                title="Digite aqui um Email válido!">
+
+            @if ($errors->any() && $errors->has('email'))
+            <p id="email-error" class="text-center text-danger"><strong>{{ $errors->first('email') }}</strong></p>
+            @endif
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -37,8 +43,11 @@
                 value="{{$visitante ? $visitante->celular : ''}}"
                 class="form-control form-control-sm"
                 placeholder="Num. Celular..."
-                title="Digite aqui seu numero de Celular."
-                required>
+                title="Digite aqui seu numero de Celular.">
+
+            @if ($errors->any() && $errors->has('celular'))
+            <p id="celular-error" class="text-center text-danger"><strong>{{ $errors->first('celular') }}</strong></p>
+            @endif
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -52,11 +61,12 @@
                     class="form-control"
                     data-provide="datepicker"
                     placeholder="Data Nascimento..."
-                    title="Digite aqui sua Data de Nascimento."
-                    required>
+                    title="Digite aqui sua Data de Nascimento.">
+
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-th"></span>
                 </div>
+
             </div>
         </div>
     </div>
@@ -70,8 +80,8 @@
                 value="{{$visitante ? $visitante->cep : ''}}"
                 class="form-control form-control-sm"
                 placeholder="CEP..."
-                title="Digite o CEP do seu endereço atual."
-                required>
+                title="Digite o CEP do seu endereço atual.">
+
         </div>
     </div>
 

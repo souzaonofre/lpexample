@@ -29,22 +29,63 @@
 $(document).ready(function(){
     //
     var fNome = $("#nome");
+    var fEmail = $("#email");
     var fDataNasc = $("#data-nascimento");
     var fCelular = $("#celular");
     var fCep = $("#cep");
     //
+    var fEndereco = $("#endereco");
+    var fBairro = $("#bairro");
+    var fCidade = $("#cidade");
+    var fUf = $("#uf");
     //
     // Field Nome
     //
     // Focus function
     fNome.focus();
-    fNome.on('blur'){
-    };
+    //
+    // on Blur event handlers
+    // Nome
+    fNome.on('blur', function() {
+        if (this.value !== '' && this.value !== null) {
+            $(this.parentElement).removeClass('has-error');
+            $("#nome-error").addClass('hidden');
+        }
+    });
+    // Email
+    fEmail.on('blur', function() {
+        if (this.value !== '' && this.value !== null) {
+            $(this.parentElement).removeClass('has-error');
+            $("#email-error").addClass('hidden');
+        }
+    });
+    // Celular
+    fCelular.on('blur', function() {
+        if (this.value !== '' && this.value !== null) {
+            $(this.parentElement).removeClass('has-error');
+            $("#celular-error").addClass('hidden');
+        }
+    });
+    // on Blur event
+    fDataNasc.on('blur', function() {
+        if (this.value !== '' && this.value !== null) {
+            $(this.parentElement).removeClass('has-error');
+            $("#data-nasc-error").addClass('hidden');
+        }
+    });
+    // on Blur event
+    fCep.on('blur', function() {
+        if (this.value !== '' && this.value !== null) {
+            $(this.parentElement).removeClass('has-error');
+            $("#cep-error").addClass('hidden');
+        }
+    });
+
+
 
     //
-    // Field Data Nascimento
+    // Datepicker
     //
-    // Datepicker function
     fDataNasc.datepicker({
         format: 'dd/mm/yyyy',
         language: 'pt-BR',
@@ -52,9 +93,9 @@ $(document).ready(function(){
         autoclose: true
     });
     //
-    // Field Celular functions
+    // InpuMask functions
     //
-    // Mask function
+    // Celular
     fCelular.inputmask({
         "greedy": false,
         "clearMaskOnLostFocus": true,
@@ -62,10 +103,7 @@ $(document).ready(function(){
         "autoUnmask": true,
         "mask": "(99) 99999-9999"
     });
-    //
-    // Field CEP
-    //
-    // Mask function
+    // CEP
     fCep.inputmask({
         "greedy": false,
         "clearMaskOnLostFocus": true,

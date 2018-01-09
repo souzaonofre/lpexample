@@ -1,12 +1,8 @@
 <!-- LandPage form -->
 
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+    <div id="form-error" class="alert alert-danger">
+        <span>"Erro de validação dos dados, favor revisar o formulário!"</span>
     </div>
 @endif
 

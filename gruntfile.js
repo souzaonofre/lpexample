@@ -260,7 +260,10 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['clean:dist', 'copy', 'cssmin', 'uglify', 'concat:dist']);
 
   // Dev task(s).
-  grunt.registerTask('dev', ['clean:dev', 'copy', 'concat:dev']);
+  grunt.registerTask('dev', ['clean:dev', 'copy', 'jshint', 'concat:dev']);
+
+  // Dev task(s).
+  grunt.registerTask('lint', ['jshint']);
 
   // Server Live Reload.
 //  grunt.registerTask('server', ['connect:server']);
