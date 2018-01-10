@@ -9,7 +9,7 @@ module.exports = function (grunt) {
     src: {
 
         app: {
-          js: ['resources/assets/js/app.js'],
+          js: ['resources/assets/js/apikeys.js','resources/assets/js/app.js'],
           css: ['resources/assets/css/*.css'],
           img: ['resources/assets/img']
         },
@@ -20,7 +20,8 @@ module.exports = function (grunt) {
                 'node_modules/bootstrap/dist/js/bootstrap.js',
                 'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
                 'node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js',
-                'node_modules/inputmask/dist/jquery.inputmask.bundle.js'
+                'node_modules/inputmask/dist/jquery.inputmask.bundle.js',
+                'resources/assets/vendors/js/jquery.correios.js'
 
               ],
               css: [
@@ -260,7 +261,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['clean:dist', 'copy', 'cssmin', 'uglify', 'concat:dist']);
 
   // Dev task(s).
-  grunt.registerTask('dev', ['clean:dev', 'copy', 'jshint', 'concat:dev']);
+  grunt.registerTask('dev', ['clean:dev', 'copy',  'concat:dev']);
 
   // Dev task(s).
   grunt.registerTask('lint', ['jshint']);

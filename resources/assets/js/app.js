@@ -1,3 +1,4 @@
+'use strict';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -27,6 +28,8 @@
 //var Inputmask = require('inputmask');
 
 $(document).ready(function(){
+    //
+
     //
     var fNome = $("#nome");
     var fEmail = $("#email");
@@ -78,6 +81,11 @@ $(document).ready(function(){
         if (this.value !== '' && this.value !== null) {
             $(this.parentElement).removeClass('has-error');
             $("#cep-error").addClass('hidden');
+            $('#collapseOne').collapse('hide');
+            $('#collapseTwo').collapse('show');
+            fEndereco.val(fEndereco.val() + ', ');
+            fEndereco.attr('title', "Digite aqui o numero do endereco");
+            fEndereco.focus();
         }
     });
 
@@ -111,5 +119,14 @@ $(document).ready(function(){
         "autoUnmask": true,
         "mask": "99999-999"
     });
+    //
+    //
+    if (apikeys) {
+        //
+        correios.init(apikeys.app_key, apikeys.app_secret);
+        $('#cep').correios('#endereco', '#bairro', '#cidade', '#uf', '#loading');
+        //
+    }
+    //
     //
 });
